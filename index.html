@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StudyNest is a responsive study planner. Add tasks, tick them off and filter what is left.">
+  <title>StudyNest | Plan your study day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 2 families, 3 weights: Montserrat 700, Open Sans 400 + 600 -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="StudyNest home">StudyNest</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#planner">Planner</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <h1 id="hero-title">Plan small. Study steady.</h1>
+        <p class="lead">Write down what you want to finish today, tick it off as you go, and see what is left. Works on your phone, tablet and laptop.</p>
+        <a class="btn btn-primary" href="#planner">Add your first task</a>
+      </div>
+    </section>
+
+    <section id="planner" class="planner" aria-labelledby="planner-title">
+      <div class="wrap planner-grid">
+        <div class="planner-intro">
+          <h2 id="planner-title">Today's plan</h2>
+          <p id="count" class="count" aria-live="polite">0 tasks left</p>
+        </div>
+
+        <div class="planner-main">
+          <form id="task-form" class="task-form" novalidate>
+            <label for="task-input">New task</label>
+            <div class="field-row">
+              <input id="task-input" name="task" type="text" maxlength="80" placeholder="e.g. Revise CSS Grid" autocomplete="off" required>
+              <button class="btn btn-primary" type="submit">Add task</button>
+            </div>
+            <p id="form-error" class="error" role="alert" hidden>Type a task before adding it.</p>
+          </form>
+
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-filter="active" aria-pressed="false">To do</button>
+            <button type="button" class="chip" data-filter="done" aria-pressed="false">Done</button>
+          </div>
+
+          <ul id="task-list" class="task-list"></ul>
+          <p id="empty" class="empty" hidden>No tasks here yet. Add one above to get started.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title">How it works</h2>
+        <div class="how-grid">
+          <article class="how-item">
+            <h3>Add</h3>
+            <p>Type a task and press Add task. Keep each one small enough to finish in one sitting.</p>
+          </article>
+          <article class="how-item">
+            <h3>Tick off</h3>
+            <p>Use the checkbox when a task is done. The counter updates straight away.</p>
+          </article>
+          <article class="how-item">
+            <h3>Come back</h3>
+            <p>Your list is saved in this browser, so it is still here when you reopen the page.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Built for DecodeLabs Full Stack Internship, Project 1.</p>
+      <p><a href="mailto:you@example.com">you@example.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
